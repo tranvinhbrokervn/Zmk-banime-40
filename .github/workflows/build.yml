@@ -43,4 +43,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: firmware
-          path: banime40_nice_nano_v2.uf2
+          path: banime40.uf2
