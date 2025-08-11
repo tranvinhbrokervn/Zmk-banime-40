@@ -40,16 +40,16 @@
         
         // Khai báo theo thứ tự COL0 → COL9 (từ thấp đến cao)
         col-gpios
-            = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL0 - P0.31
-            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL1 - P0.29
-            , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL2 - P0.02
-            , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL3 - P1.15
-            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL4 - P1.13
-            , <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL5 - P1.11
-            , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL6 - P0.10
-            , <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL7 - P0.09
-            , <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL8 - P1.06
-            , <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL9 - P1.04
+            = <&gpio1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL0 - P0.31
+            , <&gpio1 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL1 - P0.29
+            , <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL2 - P0.02
+            , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL3 - P1.15
+            , <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL4 - P1.13
+            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL5 - P1.11
+            , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL6 - P0.10
+            , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL7 - P0.09
+            , <&gpio0 29  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL8 - P1.06
+            , <&gpio0 31  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL9 - P1.04
             ;
     };
 };
