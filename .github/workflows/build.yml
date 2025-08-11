@@ -1,0 +1,46 @@
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: zmkfirmware/zmk-build-arm:stable
+    name: Build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Cache west modules
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-zephyr-modules
+        with:
+          path: |
+            modules/
+            tools/
+            zephyr/
+            bootloader/
+            zmk/
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/west.yml', '**/build.yaml') }}-${{ github.run_number }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: West Init
+        run: west init -l config
+      - name: West Update
+        run: west update
+      - name: West Zephyr export
+        run: west zephyr-export
+      - name: West Build (Banime40 Nice!Nano v2)
+        run: |
+          rm -rf build
+          west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=banime40 -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+      - name: Banime40 Kconfig file
+        run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
+      - name: Rename zmk.uf2
+        run: cp build/zephyr/zmk.uf2 banime40_nice_nano_v2.uf2
+      - name: Archive (Banime40 Nice!Nano v2)
+        uses: actions/upload-artifact@v4
+        with:
+          name: firmware
+          path: banime40_nice_nano_v2.uf2
