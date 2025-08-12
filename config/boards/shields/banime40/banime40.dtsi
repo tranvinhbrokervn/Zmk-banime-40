@@ -80,7 +80,7 @@
         // segment-remap;
         // com-invdir;
         // com-sequential;
-        // prechargep = <0x22>;
+        prechargep = <0x22>;
     };    
 };
 
