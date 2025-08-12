@@ -75,7 +75,7 @@
         height = <32>;          // Screen height (32px cho 0.91")
         segment-offset = <0>;
         // page-offset = <0>;
-        // display-offset = <0>;
+        display-offset = <0>;
         multiplex-ratio = <31>; // height - 1
         // segment-remap;
         // com-invdir;
