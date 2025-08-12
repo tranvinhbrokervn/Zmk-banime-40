@@ -12,7 +12,7 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
-        // CHỜ TEST USB TRƯỚC: zephyr,display = &oled;  // Khai báo OLED làm display mặc định
+        zephyr,display = &oled;  // Khai báo OLED làm display mặc định
     };
 
     default_transform: keymap_transform_0 {
