@@ -66,8 +66,7 @@
     pinctrl-names = "default", "sleep";
     clock-frequency = <100000>; // 400kHz
     
-    // OLED Display
-    /*
+    // OLED Display    
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;           // I2C address
@@ -82,8 +81,7 @@
         com-invdir;
         com-sequential;
         prechargep = <0x22>;
-    };
-    */
+    };    
 };
 
 // Pinctrl cho I2C - SDA: P1.01, SCL: P1.02
