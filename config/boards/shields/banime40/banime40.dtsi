@@ -67,9 +67,9 @@
     clock-frequency = <100000>; // 400kHz
     
     // OLED Display    
-    oled: ssd1306@3d {
+    oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
-        reg = <0x3d>;           // I2C address
+        reg = <0x3c>;           // I2C address
         label = "DISPLAY";
         width = <128>;          // Screen width
         height = <32>;          // Screen height (32px cho 0.91")
@@ -90,7 +90,7 @@
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 1, 1)>,    // SDA - P1.01
                     <NRF_PSEL(TWIM_SCL, 1, 2)>;     // SCL - P1.02
-            bias-pull-up;
+            //bias-pull-up;
         };
     };
 
