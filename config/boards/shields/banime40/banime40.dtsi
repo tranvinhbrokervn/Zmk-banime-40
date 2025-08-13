@@ -64,7 +64,7 @@
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
-    clock-frequency = <100000>; // 400kHz
+    clock-frequency = <I2C_BITRATE_STANDARD>; // 400kHz
     
     // OLED Display    
     oled: ssd1306@3c {
@@ -79,8 +79,9 @@
         multiplex-ratio = <31>; // height - 1
         // segment-remap;
         // com-invdir;
-        // com-sequential;
+        com-sequential;
         prechargep = <0x22>;
+        inversion-on;
     };    
 };
 
@@ -90,7 +91,7 @@
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 1, 1)>,    // SDA - P1.01
                     <NRF_PSEL(TWIM_SCL, 1, 2)>;     // SCL - P1.02
-            //bias-pull-up;
+            bias-pull-up;
         };
     };
 
