@@ -21,3 +21,7 @@ endchoice
 endif # LVGL
 
 endif # SHIELD_BANIME40
+
+config ZMK_DISPLAY_INIT_PRIORITY
+    int "Display init priority"
+    default 81
