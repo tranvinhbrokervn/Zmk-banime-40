@@ -112,7 +112,7 @@
         resolution = <4>; // Số xung mỗi bước xoay
     };
 
-    encoder_button: encoder_btn {
+    /* encoder_button: encoder_btn {
         compatible = "gpio-keys";
         button-0 {
             label = "ENC_BTN";
@@ -121,5 +121,5 @@
             debounce-release-ms = <5>;
             zephyr,code = <0>;
         };
-    };
+    }; */
 };
