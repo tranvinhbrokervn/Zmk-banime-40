@@ -9,6 +9,52 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+
+    behaviors {
+        enc_cw_pgdn: behavior_pgdn {
+            compatible = "zmk,behavior-tap";
+            label = "ENC_PGDN";
+            #binding-cells = <0>;
+            bindings = <&kp PG_DN>;
+        };
+        enc_ccw_pgup: behavior_pgup {
+            compatible = "zmk,behavior-tap";
+            label = "ENC_PGUP";
+            #binding-cells = <0>;
+            bindings = <&kp PG_UP>;
+        };
+        enc_cw_volup: behavior_volup {
+            compatible = "zmk,behavior-tap";
+            label = "ENC_VOLUP";
+            #binding-cells = <0>;
+            bindings = <&kp C_VOL_UP>;
+        };
+        enc_ccw_voldn: behavior_voldn {
+            compatible = "zmk,behavior-tap";
+            label = "ENC_VOLDN";
+            #binding-cells = <0>;
+            bindings = <&kp C_VOL_DN>;
+        };
+        enc_mute: behavior_mute {
+            compatible = "zmk,behavior-tap";
+            label = "ENC_MUTE";
+            #binding-cells = <0>;
+            bindings = <&kp C_MUTE>;
+        };
+        enc_reset: behavior_reset {
+            compatible = "zmk,behavior-tap";
+            label = "ENC_RESET";
+            #binding-cells = <0>;
+            bindings = <&reset>;
+        };
+        enc_repair_bt: behavior_repair {
+            compatible = "zmk,behavior-bluetooth";
+            label = "ENC_BT_REPAIR";
+            #binding-cells = <1>;
+            param1 = <BT_CLEAR_BONDS>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -20,8 +66,9 @@
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
                 &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT &kp GT &kp QMARK &kp DEL
             >;
+            encoder-bindings = <&enc_ccw_pgup &enc_cw_pgdn &enc_mute>;
         };
-
+     
         num_layer {
             label = "Numbers"; 
             bindings = <
@@ -30,6 +77,7 @@
                 &kp LSHFT  &kp PLUS &kp MINUS &kp ASTRK &kp FSLH &kp LT    &kp GT   &kp QMARK &trans    &trans
                 &kp LCTRL  &kp TAB  &kp LALT          &lt 2 RET         &lt 3 SPACE       &kp K_APP &kp DEL   &kp ESC
             >;
+            encoder-bindings = <&enc_ccw_pgup &enc_cw_pgdn &enc_mute>;
         };
 
         base_repeat_layer {
@@ -40,6 +88,7 @@
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
                 &kp LCTRL  &kp TAB  &kp LALT          &lt 2 RET       &lt 3 SPACE       &kp LT    &kp GT    &kp QMARK
             >;
+            encoder-bindings = <&enc_ccw_voldn &enc_cw_volup &enc_reset>;
         };
 
         func_layer {
@@ -50,6 +99,7 @@
                 &trans     &trans   &trans    &trans    &trans   &trans   &trans   &kp UP    &kp END   &trans
                 &kp C_MUTE &kp C_MUTE &kp C_MUTE      &kp RET          &kp SPACE         &kp LEFT  &kp DOWN  &kp RIGHT
             >;
+            encoder-bindings = <&enc_ccw_voldn &enc_cw_volup &enc_repair_bt>;
         };
     };
 };
