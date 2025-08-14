@@ -119,7 +119,7 @@
             gpios = <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // Pin nhấn
             debounce-press-ms = <5>;
             debounce-release-ms = <5>;
-            zephyr,code = <INPUT_KEY_0>;
+            zephyr,code = <0>;
         };
     };
 };
