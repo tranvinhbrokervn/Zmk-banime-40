@@ -116,7 +116,7 @@
         compatible = "gpio-keys";
         button-0 {
             label = "ENC_BTN";
-            gpios = <&gpio1 07 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // Pin nhấn
+            gpios = <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // Pin nhấn
             debounce-press-ms = <5>;
             debounce-release-ms = <5>;
             zephyr,code = <INPUT_KEY_0>;
