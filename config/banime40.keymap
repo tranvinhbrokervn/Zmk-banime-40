@@ -9,7 +9,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-
     behaviors {
         enc_cw_pgdn: behavior_pgdn {
             compatible = "zmk,behavior-tap";
