@@ -89,11 +89,13 @@
     enc_ccw_zoomout: encoder_ccw_zoomout {
         compatible = "zmk,behavior-tap";
         label = "ENCODER_CCW_ZOOMOUT";
+        #binding-cells = <0>;
         bindings = <&kp LC(MINUS)>;
     };
     enc_cw_zoomin: encoder_cw_zoomin {
         compatible = "zmk,behavior-tap";
         label = "ENCODER_CW_ZOOMIN";
+        #binding-cells = <0>;
         bindings = <&kp LC(EQUAL)>;
     };
 
@@ -112,5 +114,17 @@
         flavor = "hold-preferred";
         tapping-term-ms = <2000>;
         bindings = <&bootloader &bt BT_CLR>;
+    };
+    zoomout_macro: zoomout_macro {
+        compatible = "zmk,behavior-macro";
+        label = "ZOOMOUT_MACRO";
+        #binding-cells = <0>;
+        bindings = <&kp LC(MINUS)>;
+    };
+    zoomin_macro: zoomin_macro {
+        compatible = "zmk,behavior-macro";
+        label = "ZOOMIN_MACRO";
+        #binding-cells = <0>;
+        bindings = <&kp LC(EQUAL)>;
     };
 };
