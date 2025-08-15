@@ -77,12 +77,12 @@
     enc_ccw_voldn: encoder_ccw_voldn {
         compatible = "zmk,behavior-tap";
         label = "ENCODER_CCW_VOLDN";
-        bindings = <&kp C_VOLD>;
+        bindings = <&kp C_VOL_DN>;
     };
     enc_cw_volup: encoder_cw_volup {
         compatible = "zmk,behavior-tap";
         label = "ENCODER_CW_VOLUP";
-        bindings = <&kp C_VOLU>;
+        bindings = <&kp C_VOL_UP>;
     };
 
     // SỬA macro zoom dùng tổ hợp phím đúng chuẩn devicetree ZMK
