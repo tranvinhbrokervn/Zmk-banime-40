@@ -1,0 +1,16 @@
+behaviors:
+  - name: encoder_hold01_2s
+    type: hold-tap
+    flavor: hold-preferred
+    tapping_term_ms: 2000           # Thời gian giữ để nhận là "hold", ở đây là 2s
+    bindings:
+      - KC_END                      # Giữ: về cuối trang
+      - KC_HOME                     # Nhấn nhanh: về đầu trang
+
+  - name: encoder_hold23_2s
+    type: hold-tap
+    flavor: hold-preferred
+    tapping_term_ms: 2000           # Thời gian giữ để nhận là "hold", ở đây là 2s
+    bindings:
+      - BOOTLOADER                    # Giữ: bootloader
+      - BT_CLR                     # Nhấn nhanh: xóa thiết bị hiện tại
