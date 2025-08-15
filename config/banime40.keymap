@@ -9,56 +9,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    behaviors {
-        enc_cw_pgdn: behavior_pgdn {
-            compatible = "zmk,behavior-tap";
-            label = "ENC_PGDN";
-            #binding-cells = <0>;
-            bindings = <&kp PG_DN>;
-        };
-        enc_ccw_pgup: behavior_pgup {
-            compatible = "zmk,behavior-tap";
-            label = "ENC_PGUP";
-            #binding-cells = <0>;
-            bindings = <&kp PG_UP>;
-        };
-        enc_cw_volup: behavior_volup {
-            compatible = "zmk,behavior-tap";
-            label = "ENC_VOLUP";
-            #binding-cells = <0>;
-            bindings = <&kp C_VOL_UP>;
-        };
-        enc_ccw_voldn: behavior_voldn {
-            compatible = "zmk,behavior-tap";
-            label = "ENC_VOLDN";
-            #binding-cells = <0>;
-            bindings = <&kp C_VOL_DN>;
-        };
-        enc_mute: behavior_mute {
-            compatible = "zmk,behavior-tap";
-            label = "ENC_MUTE";
-            #binding-cells = <0>;
-            bindings = <&kp C_MUTE>;
-        };
-        enc_reset: behavior_reset {
-            compatible = "zmk,behavior-tap";
-            label = "ENC_RESET";
-            #binding-cells = <0>;
-            bindings = <&reset>;
-        };
-        enc_repair_bt: behavior_repair {
-            compatible = "zmk,behavior-bluetooth";
-            label = "ENC_BT_REPAIR";
-            #binding-cells = <0>;
-            param1 = <&bt BT_CLR_ALL>;
-        };
-        reset: behavior_reset {
-            compatible = "zmk,behavior-reset";
-            label = "RESET";
-            #binding-cells = <0>;
-        };    
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -68,42 +18,100 @@
                 &kp Q      &kp W    &kp E    &kp R    &kp T    &kp Y    &kp U    &kp I     &kp O     &kp P
                 &kp A      &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K     &kp L     &kp BSPC
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
-                &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT &kp GT &kp QMARK &kp DEL
+                &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL
             >;
-            encoder-bindings = <&enc_ccw_pgup &enc_cw_pgdn &enc_mute>;
+            encoder-bindings = <&enc_ccw_pgup &enc_cw_pgdn &enc_home_end>;
         };
      
         num_layer {
-            label = "Numbers"; 
+            label = "Numb"; 
             bindings = <
                 &kp N1     &kp AT   &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR
                 &kp TAB    &kp TILDE &kp LBKT &kp RBKT &kp DOWN  &kp MINUS &kp PLUS &kp BSPC  &trans    &trans
                 &kp LSHFT  &kp PLUS &kp MINUS &kp ASTRK &kp FSLH &kp LT    &kp GT   &kp QMARK &trans    &trans
                 &kp LCTRL  &kp TAB  &kp LALT          &lt 2 RET         &lt 3 SPACE       &kp K_APP &kp DEL   &kp ESC
             >;
-            encoder-bindings = <&enc_ccw_pgup &enc_cw_pgdn &enc_mute>;
+            encoder-bindings = <&enc_ccw_pgup &enc_cw_pgdn &enc_home_end>;
         };
 
         base_repeat_layer {
-            label = "Base2";
+            label = "Symb";
             bindings = <
                 &kp Q      &kp W    &kp E    &kp R    &kp T    &kp Y    &kp U    &kp I     &kp O     &kp P
                 &kp A      &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K     &kp L     &kp BSPC
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
                 &kp LCTRL  &kp TAB  &kp LALT          &lt 2 RET       &lt 3 SPACE       &kp LT    &kp GT    &kp QMARK
             >;
-            encoder-bindings = <&enc_ccw_voldn &enc_cw_volup &enc_reset>;
+            // Xoay: volume, nhấn: mute
+            encoder-bindings = <&enc_ccw_voldn &enc_cw_volup &enc_mute>;
         };
 
         func_layer {
-            label = "Function";
+            label = "Navi";
             bindings = <
                 &kp ESC    &kp INS  &kp PG_UP &kp PG_DN &kp HOME &trans   &trans   &trans    &trans    &trans
                 &kp TAB    &kp LEFT &kp DOWN  &kp RIGHT &kp DEL  &trans   &trans   &trans    &trans    &trans
                 &trans     &trans   &trans    &trans    &trans   &trans   &trans   &kp UP    &kp END   &trans
                 &kp C_MUTE &kp C_MUTE &kp C_MUTE      &kp RET          &kp SPACE         &kp LEFT  &kp DOWN  &kp RIGHT
             >;
-            encoder-bindings = <&enc_voldn &enc_volup &enc_bt_repair>;
+            // Xoay: zoom in/out, nhấn/giữ: behavior hold-tap
+            encoder-bindings = <&enc_ccw_zoomout &enc_cw_zoomin &enc_hold23_2s>;
         };
+    };
+
+    // ĐỊNH NGHĨA ENCODER MACROS
+    enc_ccw_pgup: encoder_ccw_pgup {
+        compatible = "zmk,behavior-tap";
+        label = "ENCODER_CCW_PGUP";
+        bindings = <&kp PG_UP>;
+    };
+    enc_cw_pgdn: encoder_cw_pgdn {
+        compatible = "zmk,behavior-tap";
+        label = "ENCODER_CW_PGDN";
+        bindings = <&kp PG_DN>;
+    };
+    enc_mute: encoder_mute {
+        compatible = "zmk,behavior-tap";
+        label = "ENCODER_MUTE";
+        bindings = <&kp C_MUTE>;
+    };
+
+    enc_ccw_voldn: encoder_ccw_voldn {
+        compatible = "zmk,behavior-tap";
+        label = "ENCODER_CCW_VOLDN";
+        bindings = <&kp C_VOLD>;
+    };
+    enc_cw_volup: encoder_cw_volup {
+        compatible = "zmk,behavior-tap";
+        label = "ENCODER_CW_VOLUP";
+        bindings = <&kp C_VOLU>;
+    };
+
+    enc_ccw_zoomout: encoder_ccw_zoomout {
+        compatible = "zmk,behavior-tap";
+        label = "ENCODER_CCW_ZOOMOUT";
+        bindings = <&kp LC( MINUS )>;
+    };
+    enc_cw_zoomin: encoder_cw_zoomin {
+        compatible = "zmk,behavior-tap";
+        label = "ENCODER_CW_ZOOMIN";
+        bindings = <&kp LC( EQUAL )>;
+    };
+
+    enc_home_end: encoder_home_end {
+        compatible = "zmk,behavior-hold-tap";
+        label = "ENCODER_HOME_END";
+        flavor = "hold-preferred";
+        tapping-term-ms = <2000>;
+        bindings = <&kp END &kp HOME>;
+    };
+
+    // Behavior hold-tap cho layer 3
+    enc_hold23_2s: encoder_hold23_2s {
+        compatible = "zmk,behavior-hold-tap";
+        label = "ENCODER_HOLD23_2S";
+        flavor = "hold-preferred";
+        tapping-term-ms = <2000>;
+        bindings = <&bootloader &bt BT_CLR>;
     };
 };
