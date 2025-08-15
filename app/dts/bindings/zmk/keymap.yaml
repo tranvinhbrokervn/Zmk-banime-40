@@ -18,12 +18,14 @@ child-binding:
       type: phandle-array
       required: false
 
+    encoder-bindings:
+      type: phandle-array
+      required: false
+      description: List of encoder bindings for the layer
+
     label:
       type: string
       required: false
       deprecated: true
       description: Deprecated. Use "name" instead.
-    encoder-bindings:
-      type: phandle-array
-      required: false
-      description: List of encoder bindings for the layer
+    
