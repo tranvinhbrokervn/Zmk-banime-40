@@ -42,7 +42,6 @@
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
                 &kp LCTRL  &kp TAB  &kp LALT          &lt 2 RET       &lt 3 SPACE       &kp LT    &kp GT    &kp QMARK
             >;
-            // Xoay: volume, nhấn: mute
             encoder-bindings = <&enc_ccw_voldn &enc_cw_volup &enc_mute>;
         };
 
@@ -54,7 +53,6 @@
                 &trans     &trans   &trans    &trans    &trans   &trans   &trans   &kp UP    &kp END   &trans
                 &kp C_MUTE &kp C_MUTE &kp C_MUTE      &kp RET          &kp SPACE         &kp LEFT  &kp DOWN  &kp RIGHT
             >;
-            // Xoay: zoom in/out, nhấn/giữ: behavior hold-tap
             encoder-bindings = <&enc_ccw_zoomout &enc_cw_zoomin &enc_hold23_2s>;
         };
     };
@@ -87,15 +85,16 @@
         bindings = <&kp C_VOLU>;
     };
 
+    // SỬA macro zoom dùng tổ hợp phím đúng chuẩn devicetree ZMK
     enc_ccw_zoomout: encoder_ccw_zoomout {
         compatible = "zmk,behavior-tap";
         label = "ENCODER_CCW_ZOOMOUT";
-        bindings = <&kp LC( MINUS )>;
+        bindings = <&kp LC &kp MINUS>;
     };
     enc_cw_zoomin: encoder_cw_zoomin {
         compatible = "zmk,behavior-tap";
         label = "ENCODER_CW_ZOOMIN";
-        bindings = <&kp LC( EQUAL )>;
+        bindings = <&kp LC &kp EQUAL>;
     };
 
     enc_home_end: encoder_home_end {
