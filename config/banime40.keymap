@@ -53,6 +53,11 @@
             #binding-cells = <0>;
             param1 = <&bt BT_CLR_ALL>;
         };
+        reset: behavior_reset {
+            compatible = "zmk,behavior-reset";
+            label = "RESET";
+            #binding-cells = <0>;
+        };    
     };
 
     keymap {
