@@ -5,6 +5,3 @@
  */
 
 #include "banime40.dtsi"
-// Liên kết các node encoder và nút nhấn vào shield
-&encoder0 {};
-&encoder_button {};
