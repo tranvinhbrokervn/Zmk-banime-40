@@ -89,12 +89,12 @@
     enc_ccw_zoomout: encoder_ccw_zoomout {
         compatible = "zmk,behavior-tap";
         label = "ENCODER_CCW_ZOOMOUT";
-        bindings = <&kp LC &kp MINUS>;
+        bindings = <&kp LC(MINUS)>;
     };
     enc_cw_zoomin: encoder_cw_zoomin {
         compatible = "zmk,behavior-tap";
         label = "ENCODER_CW_ZOOMIN";
-        bindings = <&kp LC &kp EQUAL>;
+        bindings = <&kp LC(EQUAL)>;
     };
 
     enc_home_end: encoder_home_end {
