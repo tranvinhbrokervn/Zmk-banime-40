@@ -50,8 +50,8 @@
         enc_repair_bt: behavior_repair {
             compatible = "zmk,behavior-bluetooth";
             label = "ENC_BT_REPAIR";
-            #binding-cells = <1>;
-            param1 = <BT_CLEAR_BONDS>;
+            #binding-cells = <0>;
+            param1 = <&bt BT_CLR_ALL>;
         };
     };
 
@@ -99,7 +99,7 @@
                 &trans     &trans   &trans    &trans    &trans   &trans   &trans   &kp UP    &kp END   &trans
                 &kp C_MUTE &kp C_MUTE &kp C_MUTE      &kp RET          &kp SPACE         &kp LEFT  &kp DOWN  &kp RIGHT
             >;
-            encoder-bindings = <&enc_ccw_voldn &enc_cw_volup &enc_repair_bt>;
+            encoder-bindings = <&enc_voldn &enc_volup &enc_bt_repair>;
         };
     };
 };
