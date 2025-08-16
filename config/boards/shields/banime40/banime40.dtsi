@@ -124,3 +124,6 @@
         };
     };
 };
+&sensorhub {
+    sensors = <&encoder0>;
+};
