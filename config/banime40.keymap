@@ -29,9 +29,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HT_BT_BOOT";
             #binding-cells = <0>;
-            bindings = <&bt BT_CLR &bootloader>;
+            bindings = <&bt BT_CLR>, <&bootloader>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <200>;        
         };
     };
     keymap {
