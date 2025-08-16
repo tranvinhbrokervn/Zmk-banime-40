@@ -20,7 +20,7 @@
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
                 &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL
             >;
-            encoder-bindings = <&enc_ccw_pgup &enc_cw_pgdn &enc_home_end>;
+            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
      
         num_layer {
@@ -31,7 +31,7 @@
                 &kp LSHFT  &kp PLUS &kp MINUS &kp ASTRK &kp FSLH &kp LT    &kp GT   &kp QMARK &trans    &trans
                 &kp LCTRL  &kp TAB  &kp LALT          &lt 2 RET         &lt 3 SPACE       &kp K_APP &kp DEL   &kp ESC
             >;
-            encoder-bindings = <&enc_ccw_pgup &enc_cw_pgdn &enc_home_end>;
+            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
 
         base_repeat_layer {
@@ -42,7 +42,7 @@
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
                 &kp LCTRL  &kp TAB  &kp LALT          &lt 2 RET       &lt 3 SPACE       &kp LT    &kp GT    &kp QMARK
             >;
-            encoder-bindings = <&enc_ccw_voldn &enc_cw_volup &enc_mute>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         func_layer {
@@ -53,11 +53,11 @@
                 &trans     &trans   &trans    &trans    &trans   &trans   &trans   &kp UP    &kp END   &trans
                 &kp C_MUTE &kp C_MUTE &kp C_MUTE      &kp RET          &kp SPACE         &kp LEFT  &kp DOWN  &kp RIGHT
             >;
-            encoder-bindings = <&enc_ccw_zoomout &enc_cw_zoomin &enc_hold23_2s>;
+            sensor-bindings = <&inc_dec_kp LC(EQUAL) LC(MINUS)>;
         };
     };
 
-    // ĐỊNH NGHĨA ENCODER MACROS
+    /* // ĐỊNH NGHĨA ENCODER MACROS
     enc_ccw_pgup: encoder_ccw_pgup {
         compatible = "zmk,behavior-tap";
         label = "ENCODER_CCW_PGUP";
@@ -130,5 +130,5 @@
         label = "ZOOMIN_MACRO";
         #binding-cells = <0>;
         bindings = <&kp LC(EQUAL)>;
-    };
+    }; */
 };
