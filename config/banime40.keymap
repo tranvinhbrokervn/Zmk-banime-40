@@ -20,7 +20,7 @@
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
                 &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL
             >;
-            sensor-bindings = <&enc_ccw_pgup &enc_cw_pgdn &enc_home_end>;
+            encoder-bindings = <&enc_ccw_pgup &enc_cw_pgdn &enc_home_end>;
         };
      
         num_layer {
@@ -31,7 +31,7 @@
                 &kp LSHFT  &kp PLUS &kp MINUS &kp ASTRK &kp FSLH &kp LT    &kp GT   &kp QMARK &trans    &trans
                 &kp LCTRL  &kp TAB  &kp LALT          &lt 2 RET         &lt 3 SPACE       &kp K_APP &kp DEL   &kp ESC
             >;
-            sensor-bindings = <&enc_ccw_pgup &enc_cw_pgdn &enc_home_end>;
+            encoder-bindings = <&enc_ccw_pgup &enc_cw_pgdn &enc_home_end>;
         };
 
         base_repeat_layer {
@@ -42,7 +42,7 @@
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
                 &kp LCTRL  &kp TAB  &kp LALT          &lt 2 RET       &lt 3 SPACE       &kp LT    &kp GT    &kp QMARK
             >;
-            sensor-bindings = <&enc_ccw_voldn &enc_cw_volup &enc_mute>;
+            encoder-bindings = <&enc_ccw_voldn &enc_cw_volup &enc_mute>;
         };
 
         func_layer {
@@ -53,7 +53,7 @@
                 &trans     &trans   &trans    &trans    &trans   &trans   &trans   &kp UP    &kp END   &trans
                 &kp C_MUTE &kp C_MUTE &kp C_MUTE      &kp RET          &kp SPACE         &kp LEFT  &kp DOWN  &kp RIGHT
             >;
-            sensor-bindings = <&enc_ccw_zoomout &enc_cw_zoomin &enc_hold23_2s>;
+            encoder-bindings = <&enc_ccw_zoomout &enc_cw_zoomin &enc_hold23_2s>;
         };
     };
 
@@ -61,27 +61,31 @@
     enc_ccw_pgup: encoder_ccw_pgup {
         compatible = "zmk,behavior-tap";
         label = "ENCODER_CCW_PGUP";
+        #binding-cells = <0>
         bindings = <&kp PG_UP>;
     };
     enc_cw_pgdn: encoder_cw_pgdn {
         compatible = "zmk,behavior-tap";
         label = "ENCODER_CW_PGDN";
+        #binding-cells = <0>
         bindings = <&kp PG_DN>;
     };
     enc_mute: encoder_mute {
         compatible = "zmk,behavior-tap";
-        label = "ENCODER_MUTE";
+        label = "ENCODER_MUTE";       
         bindings = <&kp C_MUTE>;
     };
 
     enc_ccw_voldn: encoder_ccw_voldn {
         compatible = "zmk,behavior-tap";
         label = "ENCODER_CCW_VOLDN";
+        #binding-cells = <0>
         bindings = <&kp C_VOL_DN>;
     };
     enc_cw_volup: encoder_cw_volup {
         compatible = "zmk,behavior-tap";
         label = "ENCODER_CW_VOLUP";
+        #binding-cells = <0>
         bindings = <&kp C_VOL_UP>;
     };
 
