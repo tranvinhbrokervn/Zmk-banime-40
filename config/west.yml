@@ -6,10 +6,6 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       revision: main
-      import: app/west.yml
-    - name: zmk-encoder-module
-      path: modules/zmk-encoder-module
-      url: https://github.com/tranvinhbrokervn/Zmk-banime-40/tree/c733da7624420b0a926ed2166f5202d598d0289a/zmk-encoder-module
-      revision: +screen+rotary
+      import: app/west.yml  
   self:
     path: config
