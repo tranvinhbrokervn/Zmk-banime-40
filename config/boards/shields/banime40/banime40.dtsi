@@ -55,6 +55,11 @@
             , <&gpio0 31  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL9 - P1.04
             ;
     };
+    encoder_button: kscan {
+        compatible = "zmk,kscan-gpio";
+        label = "ENC_BTN";
+        input-gpios = <&gpio0 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
 };
 
 // I2C Configuration for OLED / BƯỚC 1: CHỈ ENABLE I2C - CHƯA ENABLE OLED
@@ -118,14 +123,14 @@
           triggers-per-rotation = <80>;
     };
 
-    encoder_button: encoder_btn {
-        compatible = "gpio-keys";
+    /* encoder_button: encoder_btn {
+        compatible = "zmk,kscan-gpio";
         button-0 {
             label = "ENC_BTN";
-            gpios = <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // Pin nhấn
-            /*debounce-press-ms = <5>;
-            debounce-release-ms = <5>;*/
-            zephyr,code = <0>;            
+            input-gpios = <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // Pin nhấn
+            debounce-press-ms = <5>;
+            debounce-release-ms = <5>;
+            zephyr,code = <0>;           
         };
-    };
+    }; */
 };
