@@ -10,22 +10,22 @@
 
 / {
     behaviors {
-        ht_home_end: ht_home_end {
+        ht_home_end: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_HOME_END";
             #binding-cells = <0>;
-            flavor = "hold-preferred";
+            bindings = <&kp C_HOME &kp C_END>;
+            flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&kp HOME &kp END>;
         };
 
-        ht_bt_boot: ht_bt_boot {
+        ht_bt_boot: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_BT_BOOT";
             #binding-cells = <0>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
             bindings = <&bt BT_CLR &bootloader>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
         };
     };
     keymap {
