@@ -69,7 +69,7 @@
           sensors = <&encoder0>;
           triggers-per-rotation = <80>;
     };
-    encoder_button: kscan {
+    encoder_button: kscan_encoder {
         compatible = "zmk,kscan-gpio";
         label = "ENC_BTN";
         input-gpios = <&gpio0 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
