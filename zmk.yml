@@ -1,3 +1,0 @@
-name: zmk-encoder-module
-build:
-  cmake: app
