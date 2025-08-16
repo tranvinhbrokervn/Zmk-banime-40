@@ -19,6 +19,12 @@
             tapping-term-ms = <200>;
         };
 
+        bt_clear: behavior_bt {
+            compatible = "zmk,behavior-bluetooth";
+            label = "BT_CLR";
+            #binding-cells = <1>;
+            bindings = <BT_CLR>;
+        };
         ht_bt_boot: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_BT_BOOT";
