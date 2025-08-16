@@ -9,6 +9,25 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    behaviors {
+        ht_home_end: ht_home_end {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_HOME_END";
+            #binding-cells = <0>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp HOME &kp END>;
+        };
+
+        ht_bt_boot: ht_bt_boot {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_BT_BOOT";
+            #binding-cells = <0>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&bt BT_CLR &bootloader>;
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
 
@@ -54,6 +73,15 @@
                 &kp C_MUTE &kp C_MUTE &kp C_MUTE      &kp RET          &kp SPACE         &kp LEFT  &kp DOWN  &kp RIGHT
             >;
             sensor-bindings = <&inc_dec_kp LC(EQUAL) LC(MINUS)>;
+        };
+        encoder_sw {
+            // Mỗi layer 1 hành vi
+            bindings = <
+                &ht_home_end   // Layer0 (Base): tap=Home, hold=End
+                &ht_home_end   // Layer1 (Numb): tap=Home, hold=End
+                &kp C_MUTE     // Layer2 (Symb): mute
+                &ht_bt_boot    // Layer3 (Navi): tap=BT clear, hold=Bootloader
+            >;
         };
     };    
 };
