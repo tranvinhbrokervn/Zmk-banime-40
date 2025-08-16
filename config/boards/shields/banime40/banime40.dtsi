@@ -55,6 +55,11 @@
             , <&gpio0 31  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   // COL9 - P1.04
             ;
     };
+    sensors: sensors {
+          compatible = "zmk,keymap-sensors";
+          sensors = <&encoder0>;
+          triggers-per-rotation = <80>;
+    };
     encoder_button: kscan {
         compatible = "zmk,kscan-gpio";
         label = "ENC_BTN";
@@ -116,21 +121,5 @@
         b-gpios = <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;  // Pin B
         steps = <4>; // Số xung mỗi bước xoay
         status = "okay";
-    };
-    sensors: sensors {
-          compatible = "zmk,keymap-sensors";
-          sensors = <&encoder0>;
-          triggers-per-rotation = <80>;
-    };
-
-    /* encoder_button: encoder_btn {
-        compatible = "zmk,kscan-gpio";
-        button-0 {
-            label = "ENC_BTN";
-            input-gpios = <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // Pin nhấn
-            debounce-press-ms = <5>;
-            debounce-release-ms = <5>;
-            zephyr,code = <0>;           
-        };
-    }; */
+    };    
 };
