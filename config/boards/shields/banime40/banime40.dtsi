@@ -65,16 +65,7 @@
         steps = <4>; // Số xung mỗi bước xoay
         status = "okay";
     };
-    encoder_button_kscan: kscan_direct {
-        compatible = "zmk,kscan-gpio-direct";
-        label = "ENCODER_BUTTON_KSCAN";
-        
-        input-gpios = <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        debounce-press-ms = <50>;
-        debounce-release-ms = <50>;  
-        //#sensor-binding-cells = <1>;
-        status = "okay";
-    };
+    
     sensors: sensors {
           compatible = "zmk,keymap-sensors";
           sensors = <&encoder0>;
@@ -96,6 +87,16 @@
             kscan = <&encoder_button_kscan>;
         row-offset = <4>;  // shift row để không overlap với matrix 4x10
         };
+    };
+    encoder_button_kscan: kscan_direct {
+        compatible = "zmk,kscan-gpio-direct";
+        label = "ENCODER_BUTTON_KSCAN";
+        
+        input-gpios = <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        debounce-press-ms = <50>;
+        debounce-release-ms = <50>;  
+        //#sensor-binding-cells = <1>;
+        status = "okay";
     };
 };
 
