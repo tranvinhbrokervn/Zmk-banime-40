@@ -18,7 +18,7 @@
                 &kp A      &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K     &kp L     &kp BSPC
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
                 &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL
-                &encoder_button_kscan C_MUTE
+                &kp C_MUTE
             >;
             sensor-bindings = <
                 &inc_dec_kp PG_DN PG_UP                
@@ -32,7 +32,7 @@
                 &kp A      &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K     &kp L     &kp BSPC
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
                 &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL
-                &encoder_button_kscan C_MUTE
+                &kp C_MUTE
             >;
             sensor-bindings = <
                 &inc_dec_kp PG_DN PG_UP                
@@ -46,7 +46,7 @@
                 &kp A      &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K     &kp L     &kp BSPC
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
                 &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL
-                &encoder_button_kscan C_MUTE
+                &kp C_MUTE
             >;
             sensor-bindings = <
                 &inc_dec_kp C_VOL_UP C_VOL_DN                
@@ -60,7 +60,7 @@
                 &kp A      &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K     &kp L     &kp BSPC
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
                 &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL
-                &encoder_button_kscan C_MUTE
+                &kp C_MUTE
             >;
             sensor-bindings = <
                 &inc_dec_kp LC(EQUAL) LC(MINUS)                
