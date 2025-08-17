@@ -100,6 +100,7 @@
     sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&encoder0 &encoder_button_kscan>;
+        #sensor-binding-cells = <3>;
         triggers-per-rotation = <20>; // chỉ áp dụng cho rotary
     };
 };
