@@ -90,7 +90,7 @@
                 &trans     &trans   &trans    &trans    &trans   &trans   &trans   &kp UP    &kp END   &trans
                 &kp C_MUTE &kp C_MUTE &kp C_MUTE      &kp RET          &kp SPACE         &kp LEFT  &kp DOWN  &kp RIGHT
             // Encoder button - BT clear/bootloader
-                &ht_bt_boot BT_CLR 0
+                &kp C_MUTE
             >;
             sensor-bindings = <&inc_dec_kp LC(EQUAL) LC(MINUS)>;
         };        
