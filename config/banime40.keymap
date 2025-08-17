@@ -28,7 +28,7 @@
         ht_bt_boot: ht_bt_boot {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_BT_BOOT";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             bindings = <&bt_clr_macro>, <&bootloader>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;        
