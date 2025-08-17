@@ -24,12 +24,18 @@
             label = "BT_CLR_MACRO";
             #binding-cells = <0>;
             bindings = <&bt BT_CLR>;
+            };
+        bootloader_behavior: bootloader_behavior {
+            compatible = "zmk,behavior-macro";
+            label = "BOOTLOADER_BEHAVIOR";
+            #binding-cells = <0>;
+            bindings = <&bootloader>;
         };
         ht_bt_boot: ht_bt_boot {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_BT_BOOT";
             #binding-cells = <2>;
-            bindings = <&bt_clr_macro>, <&bootloader>;
+            bindings = <&bt_clr_macro>, <&bootloader_behavior>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;        
         };
