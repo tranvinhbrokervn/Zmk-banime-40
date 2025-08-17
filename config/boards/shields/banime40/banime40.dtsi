@@ -82,7 +82,16 @@
         compatible = "zmk,kscan-composite";
         label = "KSCAN_COMPOSITE";
     
-        scans = <&kscan0 &encoder_button_kscan>;
+        // Nguồn kscan 1: matrix
+        matrix {
+            kscan = <&kscan0>;
+        };
+
+        // Nguồn kscan 2: encoder button direct GPIO
+        direct {
+            kscan = <&encoder_button_kscan>;
+        row-offset = <4>;  // shift row để không overlap với matrix 4x10
+        };
     };
 };
 
