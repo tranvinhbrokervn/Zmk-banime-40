@@ -72,7 +72,7 @@
         input-gpios = <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         debounce-press-ms = <50>;
         debounce-release-ms = <50>;  
-        #sensor-binding-cells = <1>;
+        //#sensor-binding-cells = <1>;
         status = "okay";
     };
     sensors: sensors {
@@ -83,6 +83,8 @@
     kscan_composite: kscan_composite {
         compatible = "zmk,kscan-composite";
         label = "KSCAN_COMPOSITE";
+        status = "okay";
+        #sensor-binding-cells = <1>;
     
         // Nguồn kscan 1: matrix
         matrix {
