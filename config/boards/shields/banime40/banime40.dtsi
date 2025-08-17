@@ -82,7 +82,7 @@
         compatible = "zmk,kscan-composite";
         label = "KSCAN_COMPOSITE";
     
-        kscan = <&kscan0 &encoder_button_kscan>;
+        scans = <&kscan0 &encoder_button_kscan>;
     };
 };
 
