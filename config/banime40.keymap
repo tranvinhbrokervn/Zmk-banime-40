@@ -44,6 +44,8 @@
                 &kp A      &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K     &kp L     &kp BSPC
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
                 &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL
+                // Encoder button - position 40
+                &ht_home_end HOME END
             >;
             sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
@@ -55,6 +57,8 @@
                 &kp TAB    &kp TILDE &kp LBKT &kp RBKT &kp DOWN  &kp MINUS &kp PLUS &kp BSPC  &trans    &trans
                 &kp LSHFT  &kp PLUS &kp MINUS &kp ASTRK &kp FSLH &kp LT    &kp GT   &kp QMARK &trans    &trans
                 &kp LCTRL  &kp TAB  &kp LALT          &lt 2 RET         &lt 3 SPACE       &kp K_APP &kp DEL   &kp ESC
+            // Encoder button - same behavior
+                &ht_home_end HOME END
             >;
             sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
@@ -66,6 +70,8 @@
                 &kp A      &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K     &kp L     &kp BSPC
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
                 &kp LCTRL  &kp TAB  &kp LALT          &lt 2 RET       &lt 3 SPACE       &kp LT    &kp GT    &kp QMARK
+            // Encoder button - mute
+                &kp C_MUTE
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
@@ -77,22 +83,10 @@
                 &kp TAB    &kp LEFT &kp DOWN  &kp RIGHT &kp DEL  &trans   &trans   &trans    &trans    &trans
                 &trans     &trans   &trans    &trans    &trans   &trans   &trans   &kp UP    &kp END   &trans
                 &kp C_MUTE &kp C_MUTE &kp C_MUTE      &kp RET          &kp SPACE         &kp LEFT  &kp DOWN  &kp RIGHT
+            // Encoder button - BT clear/bootloader
+                &ht_bt_boot BT_CLR 0
             >;
             sensor-bindings = <&inc_dec_kp LC(EQUAL) LC(MINUS)>;
-        };
-        // Encoder button mapping
-        encoder_sw {
-            compatible = "zmk,keymap-sensors";
-            sensors = <&encoder_button>;
-            triggers-per-rotation = <1>;
-        
-        // Định nghĩa behavior cho encoder button trên từng layer
-        sensor-bindings = <
-            &ht_home_end HOME END,        // Layer 0 (Base): tap=Home, hold=End
-            &ht_home_end HOME END,        // Layer 1 (Numb): tap=Home, hold=End  
-            &kp C_MUTE,                   // Layer 2 (Symb): Mute
-            &ht_bt_boot BT_CLR 0          // Layer 3 (Navi): tap=BT clear, hold=Bootloader
-        >;
-        };
+        };        
     };    
 };
