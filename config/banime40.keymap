@@ -13,23 +13,23 @@
         ht_home_end: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_HOME_END";
-            #binding-cells = <0>;
-            bindings = <&kp C_HOME>, <&kp C_END>;
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
         };
-
-        /*bt_clear: behavior_bt {
-            compatible = "zmk,behavior-bluetooth";
-            label = "BT_CLR";
-            #binding-cells = <1>;
-            bindings = <BT_CLR>;
-        };*/
+        /* Macro bọc BT_CLR vì &bt không dùng trực tiếp trong hold-tap */
+        bt_clr_macro: bt_clear {
+            compatible = "zmk,behavior-macro";
+            label = "BT_CLR_MACRO";
+            #binding-cells = <0>;
+            bindings = <&bt BT_CLR>;
+        };
         ht_bt_boot: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_BT_BOOT";
             #binding-cells = <0>;
-            bindings = <&bt BT_CLR>, <&bootloader>;
+            bindings = <&bt_clr_macro>, <&bootloader>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;        
         };
