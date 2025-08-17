@@ -82,8 +82,7 @@
         compatible = "zmk,kscan-composite";
         label = "KSCAN_COMPOSITE";
     
-        matrix = <&kscan0>;          // Ma trận 4x10 (40 keys)
-        direct = <&encoder_button_kscan>;  // Encoder button (1 key)
+        kscan = <&kscan0 &encoder_button_kscan>;
     };
 };
 
