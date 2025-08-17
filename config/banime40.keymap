@@ -35,7 +35,7 @@
             >;
             sensor-bindings = <
                 &inc_dec_kp PG_DN PG_UP
-                &encoder_button_kscan KP      // encoder button
+                &kp ESC      // encoder button
             >;
         };
         
@@ -49,7 +49,7 @@
             >;
             sensor-bindings = <
                 &inc_dec_kp C_VOL_UP C_VOL_DN
-                &encoder_button_kscan KP      // encoder button
+                &kp ESC      // encoder button
             >;
         };
         
@@ -63,7 +63,7 @@
             >;
             sensor-bindings = <
                 &inc_dec_kp LC(EQUAL) LC(MINUS)
-                &encoder_button_kscan KP      // encoder button
+                &kp ESC      // encoder button
             >;
         };        
     };
