@@ -80,15 +80,19 @@
             >;
             sensor-bindings = <&inc_dec_kp LC(EQUAL) LC(MINUS)>;
         };
+        // Encoder button mapping
         encoder_sw {
-            // Mỗi layer 1 hành vi
-            bindings = <
-                &ht_home_end   // Layer0 (Base): tap=Home, hold=End
-                &ht_home_end   // Layer1 (Numb): tap=Home, hold=End
-                &kp C_MUTE     // Layer2 (Symb): mute
-                &ht_bt_boot    // Layer3 (Navi): tap=BT clear, hold=Bootloader
-            >;
-            kscan = <&encoder_button>;
+            compatible = "zmk,keymap-sensors";
+            sensors = <&encoder_button>;
+            triggers-per-rotation = <1>;
+        
+        // Định nghĩa behavior cho encoder button trên từng layer
+        sensor-bindings = <
+            &ht_home_end HOME END,        // Layer 0 (Base): tap=Home, hold=End
+            &ht_home_end HOME END,        // Layer 1 (Numb): tap=Home, hold=End  
+            &kp C_MUTE,                   // Layer 2 (Symb): Mute
+            &ht_bt_boot BT_CLR 0          // Layer 3 (Navi): tap=BT clear, hold=Bootloader
+        >;
         };
     };    
 };
