@@ -14,7 +14,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HT_HOME_END";
             #binding-cells = <0>;
-            bindings = <&kp C_HOME &kp C_END>;
+            bindings = <&kp C_HOME>, <&kp C_END>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
         };
