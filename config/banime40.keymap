@@ -17,22 +17,26 @@
                 &kp Q      &kp W    &kp E    &kp R    &kp T    &kp Y    &kp U    &kp I     &kp O     &kp P
                 &kp A      &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K     &kp L     &kp BSPC
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
-                &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL
-                &kp C_MUTE  // Encoder button
+                &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL                
             >;
-            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
+            sensor-bindings = <
+                &inc_dec_kp PG_DN PG_UP
+                &encoder_button_kscan C_MUTE
+            >;
         };
      
         num_layer {
             label = "Numb"; 
             bindings = <
-                &kp N1     &kp AT   &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR
-                &kp TAB    &kp TILDE &kp LBKT &kp RBKT &kp DOWN  &kp MINUS &kp PLUS &kp BSPC  &trans    &trans
-                &kp LSHFT  &kp PLUS &kp MINUS &kp ASTRK &kp FSLH &kp LT    &kp GT   &kp QMARK &trans    &trans
-                &kp LCTRL  &kp TAB  &kp LALT          &lt 2 RET         &lt 3 SPACE       &kp K_APP &kp DEL   &kp ESC
-                &kp C_MUTE  // Encoder button
+                &kp Q      &kp W    &kp E    &kp R    &kp T    &kp Y    &kp U    &kp I     &kp O     &kp P
+                &kp A      &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K     &kp L     &kp BSPC
+                &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
+                &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL                
             >;
-            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
+            sensor-bindings = <
+                &inc_dec_kp PG_DN PG_UP
+                &encoder_button_kscan C_MUTE
+            >;
         };
         
         base_repeat_layer {
@@ -41,22 +45,26 @@
                 &kp Q      &kp W    &kp E    &kp R    &kp T    &kp Y    &kp U    &kp I     &kp O     &kp P
                 &kp A      &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K     &kp L     &kp BSPC
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
-                &kp LCTRL  &kp TAB  &kp LALT          &lt 2 RET       &lt 3 SPACE       &kp LT    &kp GT    &kp QMARK
-                &kp C_MUTE  // Encoder button
+                &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <
+                &inc_dec_kp C_VOL_UP C_VOL_DN
+                &encoder_button_kscan C_MUTE
+            >;
         };
         
         func_layer {
             label = "Navi";
             bindings = <
-                &kp ESC    &kp INS  &kp PG_UP &kp PG_DN &kp HOME &trans   &trans   &trans    &trans    &trans
-                &kp TAB    &kp LEFT &kp DOWN  &kp RIGHT &kp DEL  &trans   &trans   &trans    &trans    &trans
-                &trans     &trans   &trans    &trans    &trans   &trans   &trans   &kp UP    &kp END   &trans
-                &kp C_MUTE &kp C_MUTE &kp C_MUTE      &kp RET          &kp SPACE         &kp LEFT  &kp DOWN  &kp RIGHT
-                &kp C_MUTE  // Encoder button
+                &kp Q      &kp W    &kp E    &kp R    &kp T    &kp Y    &kp U    &kp I     &kp O     &kp P
+                &kp A      &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K     &kp L     &kp BSPC
+                &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
+                &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL
             >;
-            sensor-bindings = <&inc_dec_kp LC(EQUAL) LC(MINUS)>;
+            sensor-bindings = <
+                &inc_dec_kp LC(EQUAL) LC(MINUS)
+                &encoder_button_kscan C_MUTE
+            >;
         };        
     };
 };
