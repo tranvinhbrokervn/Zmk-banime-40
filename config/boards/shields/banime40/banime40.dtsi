@@ -94,7 +94,7 @@
         // Nguồn kscan 2: encoder button direct GPIO
         direct {
             kscan = <&encoder_button_kscan>;
-        row-offset = <4>;  // shift row để không overlap với matrix 4x10
+        //row-offset = <4>;  // shift row để không overlap với matrix 4x10
         };
     };
 };
