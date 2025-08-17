@@ -10,7 +10,7 @@
 
 / {
     behaviors {
-        ht_home_end: hold_tap {
+        ht_home_end: ht_home_end {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_HOME_END";
             #binding-cells = <2>;
@@ -25,7 +25,7 @@
             #binding-cells = <0>;
             bindings = <&bt BT_CLR>;
         };
-        ht_bt_boot: hold_tap {
+        ht_bt_boot: ht_bt_boot {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_BT_BOOT";
             #binding-cells = <0>;
