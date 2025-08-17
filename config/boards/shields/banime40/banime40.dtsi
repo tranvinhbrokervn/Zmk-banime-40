@@ -77,12 +77,7 @@
           compatible = "zmk,keymap-sensors";
           sensors = <&encoder0>;
           triggers-per-rotation = <80>;
-    };
-    encoder_button: kscan_encoder {
-        compatible = "zmk,kscan-gpio";
-        label = "ENC_BTN";
-        input-gpios = <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-    };
+    };    
     kscan_composite: kscan_composite {
         compatible = "zmk,kscan-composite";
         label = "KSCAN_COMPOSITE";
