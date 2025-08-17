@@ -66,11 +66,11 @@
         status = "okay";
     };
     
-    sensors: sensors {
+    /*sensors: sensors {
           compatible = "zmk,keymap-sensors";
           sensors = <&encoder0>;
           triggers-per-rotation = <80>;
-    };    
+    };   */ 
     encoder_button_kscan: kscan_direct {
         compatible = "zmk,kscan-gpio-direct";
         label = "ENCODER_BUTTON_KSCAN";
@@ -96,6 +96,11 @@
             kscan = <&encoder_button_kscan>;
         //row-offset = <4>;  // shift row để không overlap với matrix 4x10
         };
+    };
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&encoder0 &encoder_button_kscan>;
+        triggers-per-rotation = <20>; // chỉ áp dụng cho rotary
     };
 };
 
