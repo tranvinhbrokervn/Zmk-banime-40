@@ -17,11 +17,11 @@
                 &kp Q      &kp W    &kp E    &kp R    &kp T    &kp Y    &kp U    &kp I     &kp O     &kp P
                 &kp A      &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K     &kp L     &kp BSPC
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
-                &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL                
+                &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL
+                &kp ESC      // encoder button
             >;
             sensor-bindings = <
-                &inc_dec_kp PG_DN PG_UP
-                &kp ESC      // encoder button
+                &inc_dec_kp PG_DN PG_UP                
             >;
         };
      
@@ -31,11 +31,11 @@
                 &kp Q      &kp W    &kp E    &kp R    &kp T    &kp Y    &kp U    &kp I     &kp O     &kp P
                 &kp A      &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K     &kp L     &kp BSPC
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
-                &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL                
+                &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL
+                &kp ESC      // encoder button
             >;
             sensor-bindings = <
-                &inc_dec_kp PG_DN PG_UP
-                &kp ESC      // encoder button
+                &inc_dec_kp PG_DN PG_UP                
             >;
         };
         
@@ -45,11 +45,11 @@
                 &kp Q      &kp W    &kp E    &kp R    &kp T    &kp Y    &kp U    &kp I     &kp O     &kp P
                 &kp A      &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K     &kp L     &kp BSPC
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
-                &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL                
+                &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL
+                &kp ESC      // encoder button
             >;
             sensor-bindings = <
-                &inc_dec_kp C_VOL_UP C_VOL_DN
-                &kp ESC      // encoder button
+                &inc_dec_kp C_VOL_UP C_VOL_DN                
             >;
         };
         
@@ -59,11 +59,11 @@
                 &kp Q      &kp W    &kp E    &kp R    &kp T    &kp Y    &kp U    &kp I     &kp O     &kp P
                 &kp A      &kp S    &kp D    &kp F    &kp G    &kp H    &kp J    &kp K     &kp L     &kp BSPC
                 &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N    &kp M     &kp SEMI  &kp SQT
-                &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL                
+                &kp LCTRL  &kp TAB  &kp LALT &kp ESC  &lt 2 RET &lt 3 SPACE &kp LT   &kp GT    &kp QMARK &kp DEL
+                &kp ESC      // encoder button
             >;
             sensor-bindings = <
-                &inc_dec_kp LC(EQUAL) LC(MINUS)
-                &kp ESC      // encoder button
+                &inc_dec_kp LC(EQUAL) LC(MINUS)                
             >;
         };        
     };
