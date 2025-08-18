@@ -29,6 +29,26 @@
         >;
     };
 
+    kscan_composite: kscan_composite {
+        compatible = "zmk,kscan-composite";
+        rows = <5>;
+        columns = <10>;
+        label = "KSCAN_COMPOSITE";
+        status = "okay";        
+    
+        // Nguồn kscan 1: matrix
+        matrix {
+            kscan = <&kscan0>;
+        };
+
+        // Nguồn kscan 2: encoder button direct GPIO
+        direct {
+            kscan = <&encoder_button_kscan>;
+            row-offset = <4>;  // shift row để không overlap với matrix 4x10
+            col-offset = <0>;
+        };
+    };
+
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
@@ -66,11 +86,11 @@
         status = "okay";
     };
     
-    /*sensors: sensors {
+    sensors: sensors {
           compatible = "zmk,keymap-sensors";
           sensors = <&encoder0>;
-          triggers-per-rotation = <80>;
-    };   */ 
+          triggers-per-rotation = <20>;
+    };  
     encoder_button_kscan: kscan_direct {
         compatible = "zmk,kscan-gpio-direct";
         label = "ENCODER_BUTTON_KSCAN";
@@ -81,28 +101,13 @@
         #binding-cells = <1>;
         status = "okay";
     };
-    kscan_composite: kscan_composite {
-        compatible = "zmk,kscan-composite";
-        label = "KSCAN_COMPOSITE";
-        status = "okay";        
     
-        // Nguồn kscan 1: matrix
-        matrix {
-            kscan = <&kscan0>;
-        };
-
-        // Nguồn kscan 2: encoder button direct GPIO
-        direct {
-            kscan = <&encoder_button_kscan>;
-        //row-offset = <4>;  // shift row để không overlap với matrix 4x10
-        };
-    };
-    sensors {
+    /*sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&encoder0 &encoder_button_kscan>;
         #sensor-binding-cells = <3>;
         triggers-per-rotation = <20>; // chỉ áp dụng cho rotary
-    };
+    };*/
 };
 
 // I2C Configuration for OLED / BƯỚC 1: CHỈ ENABLE I2C - CHƯA ENABLE OLED
