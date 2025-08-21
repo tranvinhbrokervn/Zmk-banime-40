@@ -47,7 +47,7 @@
 &sys_reset
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_UP LS(K_SCROLL_DOWN)>;
+            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
 
         func_layer {
