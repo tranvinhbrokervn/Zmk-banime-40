@@ -130,10 +130,9 @@
         segment-offset = <0>;
         page-offset = <0>;
         display-offset = <0>;
-        multiplex-ratio = <31>; // height - 1
-        rotation = <180>;
-        // segment-remap;
-        // com-invdir;
+        multiplex-ratio = <31>; // height - 1        
+        segment-remap;
+        com-invdir;
         com-sequential;
         prechargep = <0x22>;
         inversion-on;
