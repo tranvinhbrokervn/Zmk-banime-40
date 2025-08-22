@@ -19,23 +19,23 @@
 &kp A      &kp S         &kp D     &kp F  &kp G      &kp H        &kp J  &kp K      &kp L       &kp BSPC
 &kp LSHFT  &kp Z         &kp X     &kp C  &kp V      &kp B        &kp N  &kp M      &kp SEMI    &kp SQT
 &kp LCTRL  &kp LEFT_WIN  &kp LALT  &none  &lt 2 RET  &lt 3 SPACE  &to 1  &kp COMMA  &kp PERIOD  &kp SLASH
-&kp HOME
+&kp CAPS
             >;
 
-            sensor-bindings = <&inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp LS(TAB) TAB>;
         };
 
         num_layer {
             label = "Numb";
             bindings = <
-&kp N1     &kp N2        &kp N3    &kp N4       &kp N5        &kp N6           &kp N7        &kp N8     &kp N9      &kp N0
-&kp GRAVE  &none         &none     &kp LBKT     &kp RBKT      &kp BSLH         &none         &kp MINUS  &kp EQUAL   &kp BSPC
-&kp LSHFT  &none         &none     &kp KP_PLUS  &kp KP_MINUS  &kp KP_MULTIPLY  &kp KP_SLASH  &kp M      &kp SEMI    &kp SQT
-&kp LCTRL  &kp LEFT_WIN  &kp LALT  &none        &lt 2 RET     &lt 3 SPACE      &to 0         &kp COMMA  &kp PERIOD  &kp SLASH
-&kp HOME
+&kp N1           &kp N2        &kp N3    &kp N4       &kp N5        &kp N6           &kp N7        &kp N8     &kp N9      &kp N0
+&kp GRAVE        &none         &none     &kp LBKT     &kp RBKT      &kp BSLH         &none         &kp MINUS  &kp EQUAL   &kp BSPC
+&kp LSHFT        &none         &none     &kp KP_PLUS  &kp KP_MINUS  &kp KP_MULTIPLY  &kp KP_SLASH  &kp M      &kp SEMI    &kp SQT
+&kp LCTRL        &kp LEFT_WIN  &kp LALT  &none        &lt 2 RET     &lt 3 SPACE      &to 0         &kp COMMA  &kp PERIOD  &kp SLASH
+&kp PRINTSCREEN
             >;
 
-            sensor-bindings = <&inc_dec_kp TAB LS(TAB)>;
+            sensor-bindings = <&inc_dec_kp LS(TAB) TAB>;
         };
 
         base_repeat_layer {
@@ -48,7 +48,7 @@
 &bt BT_NXT
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_DOWN C_AC_SCROLL_UP>;
         };
 
         func_layer {
