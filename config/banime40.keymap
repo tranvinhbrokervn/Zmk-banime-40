@@ -7,8 +7,18 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
+    behaviors {
+        Sensor_scroll: Sensor_scroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "SENSOR_SCROLL";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -48,7 +58,7 @@
 &bt BT_NXT
             >;
 
-            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_DOWN C_AC_SCROLL_UP>;
+            sensor-bindings = <&Sensor_scroll>;
         };
 
         func_layer {
