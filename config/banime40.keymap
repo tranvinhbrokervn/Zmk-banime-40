@@ -58,7 +58,7 @@
 &bt BT_NXT
             >;
 
-            sensor-bindings = <&Sensor_scroll>;
+            sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
         };
 
         func_layer {
