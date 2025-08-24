@@ -4,11 +4,11 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/mouse.h>
 
 / {
     behaviors {
@@ -17,6 +17,17 @@
             label = "SENSOR_SCROLL";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+        };
+
+        bt_set: bt_set {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BT_SET";
+            bindings = <&bt>, <&bt>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            hold-trigger-key-positions = <40>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -52,11 +63,11 @@
         base_repeat_layer {
             label = "Symb";
             bindings = <
-&kp F1      &kp F2        &kp F3    &kp F4    &kp F5     &kp F6       &kp F7  &kp F8     &kp F9      &kp F10
-&kp GRAVE   &none         &none     &kp LBKT  &kp RBKT   &kp BSLH     &none   &kp MINUS  &kp EQUAL   &kp BSPC
-&kp LSHFT   &none         &none     &none     &none      &none        &none   &none      &kp SEMI    &kp SQT
-&kp LCTRL   &kp LEFT_WIN  &kp LALT  &none     &lt 2 RET  &lt 3 SPACE  &none   &kp COMMA  &kp PERIOD  &kp SLASH
-&bt BT_NXT
+&kp F1                 &kp F2        &kp F3    &kp F4    &kp F5     &kp F6       &kp F7  &kp F8     &kp F9      &kp F10
+&kp GRAVE              &none         &none     &kp LBKT  &kp RBKT   &kp BSLH     &none   &kp MINUS  &kp EQUAL   &kp BSPC
+&kp LSHFT              &none         &none     &none     &none      &none        &none   &none      &kp SEMI    &kp SQT
+&kp LCTRL              &kp LEFT_WIN  &kp LALT  &none     &lt 2 RET  &lt 3 SPACE  &none   &kp COMMA  &kp PERIOD  &kp SLASH
+&bt_set BT_CLR BT_NXT
             >;
 
             sensor-bindings = <&Sensor_scroll>;
