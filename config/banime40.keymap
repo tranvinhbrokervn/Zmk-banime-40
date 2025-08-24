@@ -20,7 +20,7 @@
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
         };
 
-        bt_set: bt_set {
+        /*bt_set: bt_set {
             compatible = "zmk,behavior-hold-tap";
             label = "BT_SET";
             bindings = <&bt>, <&bt>;
@@ -29,7 +29,7 @@
             tapping-term-ms = <200>;
             hold-trigger-key-positions = <40>;
             flavor = "tap-preferred";
-        };
+        };*/
     };
 
     keymap {
