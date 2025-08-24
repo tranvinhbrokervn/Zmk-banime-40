@@ -71,7 +71,7 @@
 &bt BT_NXT
             >;
 
-            sensor-bindings = <&Sensor_scroll>;
+            sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
         };
 
         func_layer {
@@ -84,7 +84,7 @@
 &bootloader
             >;
 
-            sensor-bindings = <&inc_dec_kp LS(MINUS) LC(LS(EQUAL))>;
+            sensor-bindings = <&inc_dec_kp LC(LS(MINUS)) LC(LS(EQUAL))>;
         };
     };
 };
