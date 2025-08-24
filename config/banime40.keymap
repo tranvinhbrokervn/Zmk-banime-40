@@ -68,7 +68,7 @@
 &kp GRAVE              &none         &none     &kp LBKT  &kp RBKT   &kp BSLH     &none   &kp MINUS  &kp EQUAL   &kp BSPC
 &kp LSHFT              &none         &none     &none     &none      &none        &none   &none      &kp SEMI    &kp SQT
 &kp LCTRL              &kp LEFT_WIN  &kp LALT  &none     &lt 2 RET  &lt 3 SPACE  &none   &kp COMMA  &kp PERIOD  &kp SLASH
-&bt_set BT_CLR BT_NXT
+&kp LCTRL
             >;
 
             sensor-bindings = <&Sensor_scroll>;
