@@ -42,7 +42,7 @@
 &kp A      &kp S         &kp D     &kp F  &kp G      &kp H        &kp J  &kp K      &kp L       &kp BSPC
 &kp LSHFT  &kp Z         &kp X     &kp C  &kp V      &kp B        &kp N  &kp M      &kp SEMI    &kp SQT
 &kp LCTRL  &kp LEFT_WIN  &kp LALT  &none  &lt 2 RET  &lt 3 SPACE  &to 1  &kp COMMA  &kp PERIOD  &kp SLASH
-&kp CAPS
+&kp CAPS &none
             >;
 
             sensor-bindings = <&inc_dec_kp LS(TAB) TAB>;
@@ -55,7 +55,7 @@
 &kp GRAVE        &none         &none     &kp LBKT     &kp RBKT      &kp BSLH         &none         &kp MINUS  &kp EQUAL   &kp BSPC
 &kp LSHFT        &none         &none     &kp KP_PLUS  &kp KP_MINUS  &kp KP_MULTIPLY  &kp KP_SLASH  &kp M      &kp SEMI    &kp SQT
 &kp LCTRL        &kp LEFT_WIN  &kp LALT  &none        &lt 2 RET     &lt 3 SPACE      &to 0         &kp COMMA  &kp PERIOD  &kp SLASH
-&kp PRINTSCREEN
+&kp PRINTSCREEN &none
             >;
 
             sensor-bindings = <&inc_dec_kp LS(TAB) TAB>;
@@ -81,7 +81,7 @@
 &kp TAB      &kp LS(LC(LEFT))  &kp LS(LC(DOWN))  &kp LS(LC(RIGHT))  &none      &none        &none  &none     &none     &kp DEL
 &kp LSHFT    &none             &none             &none              &none      &none        &none  &none     &kp UP    &kp K_MENU
 &kp LCTRL    &kp LWIN          &kp LALT          &none              &lt 2 RET  &lt 3 SPACE  &none  &kp LEFT  &kp DOWN  &kp RIGHT
-&bootloader
+&bootloader &none
             >;
 
             sensor-bindings = <&inc_dec_kp LS(MINUS) LC(LS(EQUAL))>;
