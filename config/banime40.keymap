@@ -87,7 +87,7 @@
 &bt_nextdevice
             >;
 
-            sensor-bindings = <&encoder_scroll SCRL_DOWN SCRL_UP>;
+            sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
         };
 
         func_layer {
