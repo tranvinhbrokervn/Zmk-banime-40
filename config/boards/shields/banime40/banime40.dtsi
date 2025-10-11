@@ -54,6 +54,8 @@
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
         diode-direction = "col2row";
+        status = "okay";
+        wakeup-source;
     
         // Khai báo theo thứ tự ROW0 → ROW3 (từ thấp đến cao)
         row-gpios
